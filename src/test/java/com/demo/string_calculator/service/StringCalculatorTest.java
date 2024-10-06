@@ -16,4 +16,11 @@ public class StringCalculatorTest {
         calculator = new StringCalculator();
         assertEquals(0,calculator.add(""));
     }
+
+    @Test
+    public void handlingSingleInputString(){
+        calculator = new StringCalculator();
+        assertEquals(1,calculator.add("1"));
+    }
+
 }

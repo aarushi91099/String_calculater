@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 public class StringCalculator {
 
     public int add(String numbers){
-        return 0;
+        return numbers.isEmpty() ? 0 : Integer.parseInt(numbers);
     }
+
 }
