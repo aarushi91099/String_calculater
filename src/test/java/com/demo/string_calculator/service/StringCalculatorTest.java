@@ -28,5 +28,10 @@ public class StringCalculatorTest {
         calculator = new StringCalculator();
         assertEquals(3,calculator.add("1,2"));
     }
-
+    
+    @Test
+    public void handlingMultipleInputString(){
+        calculator = new StringCalculator();
+        assertEquals(7,calculator.add("1,2,4"));
+    }
 }
