@@ -60,4 +60,16 @@ public class StringCalculatorTest {
         calculator = new StringCalculator();
         assertEquals(2,calculator.add("2,1003"));
     }
+
+    @Test
+    public void whenCustomDelimiterWithMultipleCharacters_thenReturnSum() {
+        StringCalculator calculator = new StringCalculator();
+        assertEquals(6, calculator.add("//[***]\n1***2***3"));
+    }
+
+    @Test
+    public void whenCustomDelimiterWithMultipleDelimiters_thenReturnSum() {
+        StringCalculator calculator = new StringCalculator();
+        assertEquals(6, calculator.add("//[*][%]\n1*2%3"));
+    }
 }
