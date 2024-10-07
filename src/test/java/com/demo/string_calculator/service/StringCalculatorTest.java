@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
 public class StringCalculatorTest {
@@ -45,5 +46,12 @@ public class StringCalculatorTest {
     public void handlingDelimeterInInputString(){
         calculator = new StringCalculator();
         assertEquals(6,calculator.add("//;\n1;2;3"));
+    }
+
+    @Test
+    public void handlingNegativeNumberInputString(){
+        calculator = new StringCalculator();
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> calculator.add("-1,2"));
+        assertEquals("negative numbers not allowed -1",exception.getMessage());
     }
 }
